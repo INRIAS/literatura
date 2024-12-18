@@ -19,7 +19,7 @@ public class AutorService {
         return autorRepo.mostrarLibrosEnRegistroPorAutor();
     }
 
-    public List<AutorDto> mostrarLibrosEnRegistroPorFechaAutor(int autorFecha) {
+    public List<AutorDto> mostrarLibrosEnRegistroPorFechaAutor(Integer autorFecha) {
 
         List<Autor> autores = autorRepo.mostrarLibrosEnRegistroPorFechaAutor(autorFecha);
 

@@ -2,10 +2,10 @@ package com.oracle.literatura.dto;
 
 public record AutorDto(
                 String autores,
-                int fechaNacimiento,
-                int fechaFallecimiento) {
+                Integer fechaNacimiento,
+                Integer fechaFallecimiento) {
 
-        public AutorDto(String autores, int fechaNacimiento, int fechaFallecimiento) {
+        public AutorDto(String autores, Integer fechaNacimiento, Integer fechaFallecimiento) {
                 this.autores = autores;
                 this.fechaNacimiento = fechaNacimiento;
                 this.fechaFallecimiento = fechaFallecimiento;
@@ -15,11 +15,11 @@ public record AutorDto(
                 return autores;
         }
 
-        public int getFechaNacimiento() {
+        public Integer getFechaNacimiento() {
                 return fechaNacimiento;
         }
 
-        public int getFechaFallecimiento() {
+        public Integer getFechaFallecimiento() {
                 return fechaFallecimiento;
         }
 

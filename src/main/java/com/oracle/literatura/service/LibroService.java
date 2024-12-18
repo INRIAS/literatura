@@ -16,4 +16,9 @@ public class LibroService {
     public List<Libro> mostrarLibrosEnRegistroFeatAutor(){
         return libroRepo.mostrarLibrosEnRegistroFeatAutor();
     }
+
+    public List<Libro> buscarLibrosPorIdioma(String idioma){
+        return libroRepo.buscarLibrosPorIdioma(idioma);
+        // return libroRepo.mostrarLibrosPorIdioma(idioma);
+    }
 }

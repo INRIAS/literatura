@@ -15,35 +15,24 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String autores;
-    private int fechaNacimiento;
-    private int fechaFallecimiento;
+    private Integer fechaNacimiento;
+    private Integer fechaFallecimiento;
     @ManyToOne(fetch = FetchType.EAGER)
     private Libro libro;
 
     public Autor() {
     }
 
-    public Autor(String autores, int fechaNacimiento, int fechaFallecimiento) {
+    public Autor(String autores, Integer fechaNacimiento, Integer fechaFallecimiento) {
         this.autores = autores;
-        this.fechaNacimiento = fechaNacimiento;
-        this.fechaFallecimiento = fechaFallecimiento;
+        this.fechaNacimiento = fechaNacimiento != null ? fechaNacimiento : null;
+        this.fechaFallecimiento = fechaFallecimiento != null ? fechaFallecimiento : null;
     }
 
- 
     public Autor(DataAutor dataAutor) {
         this.autores = dataAutor.autores();
-        // Manejando null con Integer
-        if (dataAutor.fechaNacimiento() != null) {
-            this.fechaNacimiento = Integer.valueOf(dataAutor.fechaNacimiento());
-        } else {
-            this.fechaNacimiento = 0;  // Usar null si no hay valor
-        }
-
-        if (dataAutor.fechaFallecimiento() != null) {
-            this.fechaFallecimiento = Integer.valueOf(dataAutor.fechaFallecimiento());
-        } else {
-            this.fechaFallecimiento = 0;  // Usar null si no hay valor
-        }
+        this.fechaNacimiento = dataAutor.fechaNacimiento() != null ? dataAutor.fechaNacimiento() : null;
+        this.fechaFallecimiento = dataAutor.fechaFallecimiento() != null ? dataAutor.fechaFallecimiento() : null;
     }
 
     public String getAutores() {
@@ -54,19 +43,19 @@ public class Autor {
         this.autores = autores;
     }
 
-    public int getFechaNacimiento() {
+    public Integer getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(int fechaNacimiento) {
+    public void setFechaNacimiento(Integer fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getFechaFallecimiento() {
+    public Integer getFechaFallecimiento() {
         return fechaFallecimiento;
     }
 
-    public void setFechaFallecimiento(int fechaFallecimiento) {
+    public void setFechaFallecimiento(Integer fechaFallecimiento) {
         this.fechaFallecimiento = fechaFallecimiento;
     }
 
